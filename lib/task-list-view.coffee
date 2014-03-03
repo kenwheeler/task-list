@@ -11,21 +11,22 @@ class TaskListView extends SelectListView
 
   attach: ->
     editor = atom.workspaceView.getActivePaneItem()
-    ebuffer = editor.buffer
-    matcher = /TODO: (.*)/g
-    finder = /TODO: (.*)/
-    todos = []
-    if ebuffer.cachedText
-      if ebuffer.cachedText.match(matcher)
-        for match in ebuffer.cachedText.match(matcher)
-          todos.push(finder.exec(match)[1])
-          @setItems(todos)
+    if editor
+      ebuffer = editor.buffer
+      matcher = /TODO: (.*)/g
+      finder = /TODO: (.*)/
+      todos = []
+      if ebuffer.cachedText
+        if ebuffer.cachedText.match(matcher)
+          for match in ebuffer.cachedText.match(matcher)
+            todos.push(finder.exec(match)[1])
+            @setItems(todos)
+        else
+          @setItems(['No Tasks Found'])
       else
         @setItems(['No Tasks Found'])
-    else
-      @setItems(['No Tasks Found'])
-    atom.workspaceView.append(this)
-    @focusFilterEditor()
+      atom.workspaceView.append(this)
+      @focusFilterEditor()
   viewForItem: (item) ->
     $$ ->
       @li =>
