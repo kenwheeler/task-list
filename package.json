@@ -1,0 +1,17 @@
+{
+  "name": "task-list",
+  "main": "./lib/task-list",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Display and navigate to TODO: style comments",
+  "activationEvents": [
+    "task-list:toggle"
+  ],
+  "repository": "https://github.com/atom/task-list",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
