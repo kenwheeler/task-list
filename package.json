@@ -7,7 +7,7 @@
   "activationEvents": [
     "task-list:toggle"
   ],
-  "repository": "https://github.com/atom/task-list",
+  "repository": "https://github.com/kenwheeler/task-list",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
