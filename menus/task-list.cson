@@ -1,16 +1,1 @@
 # See https://atom.io/docs/latest/creating-a-package#menus for more details
-'context-menu':
-  '.overlayer':
-    'Enable task-list': 'task-list:toggle'
-
-'menu': [
-  {
-    'label': 'Packages'
-    'submenu': [
-      'label': 'task-list'
-      'submenu': [
-        { 'label': 'Toggle', 'command': 'task-list:toggle' }
-      ]
-    ]
-  }
-]
