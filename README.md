@@ -7,3 +7,7 @@ Activate with `ctrl-option-t`
 ####Sample Comment:
 
 `// TODO: Test Comment`
+
+####Preview:
+
+![Preview](http://i.imgur.com/ZMDoHkK.png)
