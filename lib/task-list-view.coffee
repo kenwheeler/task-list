@@ -48,7 +48,7 @@ class TaskListView extends SelectListView
     editor = atom.workspaceView.getActivePaneItem()
     ebuffer = editor.buffer
     if item != "No Tasks Found"
-      itemIndex = ebuffer.cachedText.indexOf(item)
+      itemIndex = ebuffer.cachedText.indexOf(item.message)
       bufferP = ebuffer.positionForCharacterIndex(itemIndex)
       editor.setCursorBufferPosition(bufferP)
     this.cancel()
