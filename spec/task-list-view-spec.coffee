@@ -16,7 +16,7 @@ describe "TaskListView", ->
 
       expect(
         atom.workspaceView.find(
-          '.task-list ol.list-group li.selected'
+          '.task-list ol.list-group li.selected .task-item'
         ).text()).toBe("Test Comment")
 
     it "displays No Tasks Found if there are not comments", ->
