@@ -10,4 +10,4 @@ Activate with `ctrl-option-t`
 
 ####Preview:
 
-![Preview](http://i.imgur.com/ZMDoHkK.png)
+![Preview](http://i.imgur.com/heY3FIc.gif)
