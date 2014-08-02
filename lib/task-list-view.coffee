@@ -14,9 +14,9 @@ class TaskListView extends SelectListView
     if editor
       ebuffer = editor.buffer
       if ebuffer
-        matcher = /TODO: (.*)|FIXME: (.*)/g
-        todoFinder = /TODO: (.*)/
-        fixmeFinder = /FIXME: (.*)/
+        matcher = /TODO ?: (.*)|FIXME ?: (.*)/g
+        todoFinder = /TODO ?: (.*)/
+        fixmeFinder = /FIXME ?: (.*)/
         todos = []
         if ebuffer.cachedText
           if ebuffer.cachedText.match(matcher)
