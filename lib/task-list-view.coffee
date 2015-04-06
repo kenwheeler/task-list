@@ -9,22 +9,23 @@ class TaskListView extends SelectListView
     return atom.workspaceView.command 'task-list:toggle', =>
       return @.toggle()
 
+
   attach: ->
     editor = atom.workspaceView.getActivePaneItem()
     if editor
       ebuffer = editor.buffer
       if ebuffer
-        matcher = /TODO ?: ?(.*)|FIXME ?: ?(.*)/gi
-        todoFinder = /TODO ?: ?(.*)/i
-        fixmeFinder = /FIXME ?: ?(.*)/i
+        matcher = /(TODO\s*(:|-|\s)\s*(.*))|(FIXME\s*(:|-|\s)\s*(.*))/gi
+        todoFinder = /TODO\s*(:|-|\s)\s*(.*)/i
+        fixmeFinder = /FIXME\s*(:|-|\s)\s*(.*)/i
         todos = []
         if ebuffer.cachedText
           if ebuffer.cachedText.match(matcher)
             for match in ebuffer.cachedText.match(matcher)
               if todoFinder.exec(match)
-                todos.push({message: todoFinder.exec(match)[1], type: 'TODO'})
+                todos.push({message: todoFinder.exec(match)[2], type: 'TODO'})
               else
-                todos.push({message: fixmeFinder.exec(match)[1], type: 'FIXME'})
+                todos.push({message: fixmeFinder.exec(match)[2], type: 'FIXME'})
             @setItems(todos)
           else
             @setItems([{message: 'No Tasks Found' , type: ''}])
