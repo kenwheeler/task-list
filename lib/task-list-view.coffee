@@ -3,12 +3,12 @@
 module.exports =
 
 class TaskListView extends SelectListView
+
   initialize: ->
     super
     @addClass('overlay from-top task-list')
     return atom.workspaceView.command 'task-list:toggle', =>
       return @.toggle()
-
 
   attach: ->
     editor = atom.workspaceView.getActivePaneItem()
@@ -33,6 +33,7 @@ class TaskListView extends SelectListView
           @setItems([{message: 'No Tasks Found' , type: ''}])
         atom.workspaceView.append(this)
         @focusFilterEditor()
+        
   viewForItem: (item) ->
     if item.type == 'TODO'
       markerClass = 'task-status status text-success'
@@ -45,6 +46,7 @@ class TaskListView extends SelectListView
         @div class: 'pull-right', =>
           @div class: markerClass , item.type
         @div class: 'task-item', item.message
+        
   confirmed: (item) ->
     editor = atom.workspaceView.getActivePaneItem()
     ebuffer = editor.buffer
